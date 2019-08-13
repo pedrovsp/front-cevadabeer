@@ -1,0 +1,9 @@
+@mixin font-sizes {
+    @for $var from 1 to 200 {
+        .f-s-#{$i} {
+            font-size: #{$i}px
+        }
+    }    
+}
+
+@include font-sizes();
