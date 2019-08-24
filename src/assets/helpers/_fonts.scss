@@ -1,9 +1,12 @@
-@mixin font-sizes {
-    @for $var from 1 to 200 {
-        .f-s-#{$i} {
-            font-size: #{$i}px
-        }
-    }    
+@function font-size($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
 }
 
-@include font-sizes();
+@for $i from 1 to 200 {
+    .f-s-#{$i} {
+        font-size: #{$i}px
+    }
+}    
+
+$fontDefault: 'Roboto';

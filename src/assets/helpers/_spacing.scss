@@ -1,5 +1,5 @@
 @mixin margins {
-    @for $var from 0 to 200 {
+    @for $i from 0 to 200 {
         .m-t-#{$i} {
             margin-top: #{$i}px
         }
@@ -19,7 +19,7 @@
 }
 
 @mixin paddings {
-    @for $var from 0 to 200 {
+    @for $i from 0 to 200 {
         .p-t-#{$i} {
             padding-top: #{$i}px
         }

@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 // Importar aqui modulos do material e componentes compartilhados
 import { MatDialogModule } from '@angular/material/dialog';
-import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
+import { MatInputModule } from '@angular/material/input';
 
 const MaterialComponents = [
-  MatDialogModule
+  MatDialogModule,
+  MatInputModule,
 ];
 
 @NgModule({
   declarations: [
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +25,6 @@ const MaterialComponents = [
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
-    BrowserAnimationsModule,
     ...MaterialComponents
   ],
   exports: [
