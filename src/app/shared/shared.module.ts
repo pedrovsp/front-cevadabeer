@@ -8,6 +8,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 // Importar aqui modulos do material e componentes compartilhados
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 const MaterialComponents = [
   MatDialogModule,
@@ -17,7 +20,10 @@ const MaterialComponents = [
 @NgModule({
   declarations: [
     ErrorDialogComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HeaderComponent,
+    SidebarComponent,
+    PageHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +37,10 @@ const MaterialComponents = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    ...MaterialComponents
+    ...MaterialComponents,
+    HeaderComponent,
+    SidebarComponent,
+    PageHeaderComponent
   ],
   entryComponents: [
     ErrorDialogComponent

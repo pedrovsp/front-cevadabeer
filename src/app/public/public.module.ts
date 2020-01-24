@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { PublicRoutingModule } from './public-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, DashboardComponent],
   imports: [
     CommonModule,
     SharedModule,
