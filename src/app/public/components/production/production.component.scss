@@ -1,0 +1,25 @@
+@import 'src/assets/helpers/colors';
+.box {
+    background: $colorWhite;
+    box-shadow: 3px 2px 5px rgba(#000000, 0.3);
+    display: flex;
+
+    img {
+        width: 85px;
+        height: 85px;    
+    }
+
+    .content {
+        padding: 5px;
+        margin-left: 12px;
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .type, .level {
+            font-size: 12px;
+        }
+    }
+}

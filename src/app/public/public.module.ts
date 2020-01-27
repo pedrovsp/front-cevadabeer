@@ -7,9 +7,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { ProductionPageComponent } from './pages/production-page/production-page.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
+import { ProductionComponent } from './components/production/production.component';
 
 @NgModule({
-  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent, RecipeComponent],
+  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent, RecipeComponent, ProductionComponent],
   imports: [
     CommonModule,
     SharedModule,
