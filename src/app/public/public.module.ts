@@ -6,9 +6,10 @@ import { SharedModule } from '../shared/shared.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { ProductionPageComponent } from './pages/production-page/production-page.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
 
 @NgModule({
-  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent],
+  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent, RecipeComponent],
   imports: [
     CommonModule,
     SharedModule,
