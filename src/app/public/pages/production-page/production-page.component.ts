@@ -25,9 +25,9 @@ export class ProductionPageComponent implements OnInit {
           imgLink: '',
         },
         bottleType: BottleType.BARREL,
-        duration: 5000,
+        duration: 5,
         quantity: 3,
-        startDate: new Date()
+        startDate: new Date(2020, 0, 26)
       }));
     }
   }

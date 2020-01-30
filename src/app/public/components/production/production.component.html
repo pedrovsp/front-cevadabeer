@@ -11,8 +11,10 @@
             Envase: {{ BottleType[production.bottleType] }}
         </div>
         <div class="level">
-            Dias restantes: {{ getRemainingDays(production) }} dias
+            Dias restantes: {{ production.getRemainingDays() }} dias
         </div>
     </div>
-    <div class="remaining-days-bar"></div>
+    <div class="remaining-days-bar">
+        <div class="filling-bar" [style.width.%]="productionBarLength()"></div>
+    </div>
 </div>

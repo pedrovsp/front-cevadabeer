@@ -17,4 +17,12 @@ export class Production {
             this.duration = obj.duration ? obj.duration : null;
         }
     }
+
+    getRemainingDays(): number {
+        let endDate = new Date(this.startDate);
+        endDate.setDate(endDate.getDate() + this.duration);
+    
+        return Math.round((endDate.getTime() - new Date().getTime())/(1000*60*60*24));
+    }
+    
 }

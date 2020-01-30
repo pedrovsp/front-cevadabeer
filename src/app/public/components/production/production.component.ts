@@ -8,7 +8,9 @@ import { BottleTypeText } from '../../models/production.enum';
   styleUrls: ['./production.component.scss']
 })
 export class ProductionComponent implements OnInit {
+
   @Input('production') production: Production;
+  
   BottleType = BottleTypeText;
 
   constructor() { }
@@ -16,8 +18,7 @@ export class ProductionComponent implements OnInit {
   ngOnInit() {
   }
 
-  getRemainingDays(prod: Production): number {
-    return 1;
+  productionBarLength(): number {
+    return 100 - ((this.production.getRemainingDays() * 100)/this.production.duration);
   }
-
 }

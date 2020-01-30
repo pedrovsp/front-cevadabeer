@@ -3,15 +3,22 @@
     background: $colorWhite;
     box-shadow: 3px 2px 5px rgba(#000000, 0.3);
     display: flex;
+    border-radius: 5px;
+    margin-bottom: 30px;
 
     img {
         width: 85px;
-        height: 85px;    
+        height: 85px;
+        align-self: center;
+        min-width: 85px;
     }
 
     .content {
         padding: 5px;
         margin-left: 12px;
+        margin-bottom: 5px;
+        width: 25%;
+        min-width: 200px;
 
         .title {
             font-size: 24px;
@@ -21,5 +28,20 @@
         .type, .level {
             font-size: 12px;
         }
+    }
+}
+
+.remaining-days-bar {
+    width: 100%;
+    height: 20px;
+    margin: 10px 15px;
+    border-radius: 5px;
+    background-color: $colorLightGray;
+    align-self: flex-end;
+
+    .filling-bar {
+        background-color: $colorYellow;
+        border-radius: 5px;
+        height: 20px;
     }
 }
