@@ -8,9 +8,10 @@ import { RecipesPageComponent } from './pages/recipes-page/recipes-page.componen
 import { ProductionPageComponent } from './pages/production-page/production-page.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { ProductionComponent } from './components/production/production.component';
+import { MiniProductionComponent } from './components/mini-production/mini-production.component';
 
 @NgModule({
-  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent, RecipeComponent, ProductionComponent],
+  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent, RecipeComponent, ProductionComponent, MiniProductionComponent],
   imports: [
     CommonModule,
     SharedModule,

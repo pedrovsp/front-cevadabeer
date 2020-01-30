@@ -1,1 +1,7 @@
-<app-page-header [title]="'Dashboard'"></app-page-header>
+<div class="storage">
+    <div class="title">Estoque</div>
+    <canvas #estoque width="400" height="400"></canvas>
+</div>
+<div class="production">
+    <app-mini-production [production]="production" *ngFor="let production of productionList" style="margin-bottom: 15px;"></app-mini-production>
+</div>

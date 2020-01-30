@@ -1,6 +1,3 @@
-$background: #feffdb;
-$fontColor: #000;
-
 $colorWhiteYellow: #feffdb;
 $colorYellow: #ffc60b;
 $colorOrange: #ff8b00;
@@ -8,3 +5,6 @@ $colorGray: #333;
 $colorWhite: #fff;
 $colorLightGray: #c4c4c4;
 $colorBlack: #000;
+
+$background: $colorWhite;
+$fontColor: #000;
