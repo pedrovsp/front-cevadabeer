@@ -1,14 +1,14 @@
 <div class="box">
-    <img src="{{ imgUrl }}" alt="Foto do rotulo">
+    <img src="{{ getImgUrl() }}" alt="Foto do rotulo">
     <div class="content">
         <div class="title">
-            {{ beer.name }}
+            {{ beer.nome }}
         </div>
         <div class="type">
-            Estilo: {{ Style[beer.type] }}
+            Estilo: {{ Style[beer.estilo] }}
         </div>
         <div class="level">
-            Complexidade: {{ Complexity[beer.complexity] }}
+            Complexidade: {{ Complexity[beer.complexidade] }}
         </div>
     </div>
 </div>

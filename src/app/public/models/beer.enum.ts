@@ -27,3 +27,9 @@ export enum BeerComplexityText {
     MEDIUM = 'Medio',
     HARD = 'Complexo',
 }
+
+export enum Cor {
+    AMARELA = 'AMARELA',
+	PRETA = 'PRETA',
+	VERMELHA = 'VERMELHA'
+}

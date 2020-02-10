@@ -1,17 +1,27 @@
-import { BeerType, BeerComplexity } from './beer.enum';
+import { BeerType, BeerComplexity, Cor } from './beer.enum';
 
 export class Beer {
-    name: string;
-    type: BeerType;
-    complexity: BeerComplexity;
-    imgLink: string;
+
+    id: number;
+    cor: Cor;
+    teorAlcoolico: number;
+    estilo: BeerType;
+    nome: string;
+    ibu: number;
+    diasMaturacao: number;
+    complexidade: BeerComplexity;
 
     constructor(obj: Partial<Beer>) {
         if (obj) {
-            this.name = obj.name ? obj.name : '';
-            this.type = obj.type ? obj.type : null;
-            this.complexity = obj.complexity ? obj.complexity : null;
-            this.name = obj.name ? obj.name : '';
+            this.id = obj.id ? obj.id : null;
+            this.nome = obj.nome ? obj.nome : null;
+            this.estilo = obj.estilo ? obj.estilo : null;
+            this.complexidade = obj.complexidade ? obj.complexidade : null;
+            this.cor = obj.cor ? obj.cor : null;
+            this.estilo = obj.estilo ? obj.estilo : null;
+            this.teorAlcoolico = obj.teorAlcoolico ? obj.teorAlcoolico : null;
+            this.diasMaturacao = obj.diasMaturacao ? obj.diasMaturacao : null;
+            this.ibu = obj.ibu ? obj.ibu : null;
         }
     }
 }

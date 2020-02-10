@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap, finalize } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-export const API_URL = 'localhost:8080';
+export const API_URL = 'https://glacial-cliffs-84306.herokuapp.com';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,7 @@ export class HttpService {
 
   public doGet<T>(url: string, body?: T): Observable<T> {
     this.loading = true;
-    return this.httpClient.get<T>(API_URL + url, body).pipe(
+    return this.httpClient.get<T>(API_URL + url).pipe(
       tap(
         success => {
           return success;
@@ -72,5 +72,11 @@ export class HttpService {
       ),
       finalize(() => this.loading = false)
     );
+  }
+
+  getHeaders() {
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    return headers;
   }
 }

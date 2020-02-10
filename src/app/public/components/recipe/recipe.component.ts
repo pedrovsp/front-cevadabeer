@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Beer } from '../../models/beer.model';
 import { BeerComplexityText, BeerTypeText } from '../../models/beer.enum';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-recipe',
@@ -9,6 +10,9 @@ import { BeerComplexityText, BeerTypeText } from '../../models/beer.enum';
 })
 export class RecipeComponent implements OnInit {
 
+  imgUrl = environment.S3_URL;
+  extension = environment.IMG_TYPE;
+  
   @Input('beer') beer: Beer;
   Complexity = BeerComplexityText;
   Style = BeerTypeText;
@@ -18,4 +22,7 @@ export class RecipeComponent implements OnInit {
   ngOnInit() {
   }
 
+  getImgUrl() {
+    return this.imgUrl + this.beer.id + this.extension;
+  }
 }

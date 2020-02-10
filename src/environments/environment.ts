@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  S3_URL: 'https://cevadabeer.s3-sa-east-1.amazonaws.com/',
+  IMG_TYPE: '.jpeg'
 };
 
 /*

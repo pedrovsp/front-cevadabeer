@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Beer } from '../../models/beer.model';
 import { BeerComplexity, BeerType } from '../../models/beer.enum';
+import { RecipesService } from '../../services/recipes.service';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-recipes-page',
@@ -9,20 +12,16 @@ import { BeerComplexity, BeerType } from '../../models/beer.enum';
 })
 export class RecipesPageComponent implements OnInit {
 
-  beerList: Beer[] = [];
+  beerList:Beer[];
 
-  constructor() { }
+  constructor(private recipesSvc: RecipesService) { }
 
   ngOnInit() {
-    for(let i = 0; i < 15; i++) {
-
-      this.beerList.push(new Beer({
-        name: 'Rota de Cerrado',
-        complexity: BeerComplexity.EASY,
-        type: BeerType.IPA,
-        imgLink: '',
-      }));
-    }
+    this.recipesSvc.getRecipes().pipe(
+      tap(cervejas => {
+        this.beerList = cervejas;
+      })
+    ).subscribe()
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Production } from '../../models/production.model';
-import { BeerComplexity, BeerType } from '../../models/beer.enum';
+import { BeerComplexity, BeerType, Cor } from '../../models/beer.enum';
 import { BottleType } from '../../models/production.enum';
 
 @Component({
@@ -19,10 +19,14 @@ export class DashboardComponent implements OnInit {
 
       this.productionList.push(new Production({
         beer: {
-          name: 'Rota de Cerrado',
-          complexity: BeerComplexity.EASY,
-          type: BeerType.IPA,
-          imgLink: '',
+          id: 1,
+          cor: Cor.AMARELA,
+          teorAlcoolico: 0.5,
+          diasMaturacao: 5,
+          ibu: 80,
+          nome: 'Rota de Cerrado',
+          complexidade: BeerComplexity.EASY,
+          estilo: BeerType.IPA
         },
         bottleType: BottleType.BARREL,
         duration: 5,
@@ -33,7 +37,7 @@ export class DashboardComponent implements OnInit {
   }
 
   renderChart() {
-    var ctx = document.getElementById('estoque').getContext('2d');
+//    var ctx = document.getElementById('estoque').getContext('2d');
   }
 
 }
