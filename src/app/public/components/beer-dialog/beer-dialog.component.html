@@ -1,1 +1,35 @@
-<p>beer-dialog works!</p>
+<div class="mat-dialog">
+    <div class="mat-header">
+        Detalhes da receita
+        <span style="font-size: 15px; font-weight: bold; cursor: pointer;" (click)="dialogRef.close()">X</span>
+    </div>
+    <div class="mat-body">
+        <div class="items">
+            <div class="title">
+                Ingredientes
+            </div>
+            <div *ngFor="let ig of beer.receita">
+                <div class="item">
+                    {{ ig.ingrediente.nome }}: {{ ig.quantidade }}g
+                </div>
+            </div>
+        </div>
+        <div class="details">
+            <div class="title">
+                Detalhes
+            </div>
+            <div class="item">
+                Cor: {{ beer.cor }}
+            </div>
+            <div class="item">
+                Estilo: {{ beer.estilo }}
+            </div>
+            <div class="item">
+                Teor Alcoolico: {{ beer.teorAlcoolico }}%
+            </div>
+            <div class="item">
+                IBU: {{ beer.ibu }}
+            </div>
+        </div>
+    </div>
+</div>

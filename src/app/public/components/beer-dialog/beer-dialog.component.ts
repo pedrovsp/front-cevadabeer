@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Beer } from '../../models/beer.model';
+
+export interface DialogData {
+  beer: Beer;
+}
 
 @Component({
   selector: 'app-beer-dialog',
@@ -7,9 +13,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeerDialogComponent implements OnInit {
 
-  constructor() { }
+  beer: Beer;
+
+  constructor(
+    public dialogRef: MatDialogRef<BeerDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit() {
+    this.beer = this.data.beer;
   }
 
 }

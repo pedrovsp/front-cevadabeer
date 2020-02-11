@@ -1,4 +1,6 @@
 import { BeerType, BeerComplexity, Cor } from './beer.enum';
+import { Production } from './production.model';
+import { Recipe } from './recipe.model';
 
 export class Beer {
 
@@ -10,6 +12,8 @@ export class Beer {
     ibu: number;
     diasMaturacao: number;
     conplexidade: BeerComplexity;
+    receita: Recipe[];
+    production: Production;
 
     constructor(obj: Partial<Beer>) {
         if (obj) {
