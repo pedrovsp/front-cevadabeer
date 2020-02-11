@@ -2,7 +2,7 @@
     <img class="picture" src="{{ getImgUrl() }}" alt="Foto do rotulo">
     <div class="remaining-days-bar">
         <div class="filling-bar" [style.width.%]="productionBarLength()">
-            {{ productionBarLength() }}%
+            {{ productionBarLength() | number:'1.2-2' }}%
         </div>
     </div>
 </div>

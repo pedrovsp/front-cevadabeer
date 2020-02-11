@@ -13,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import { ChartsModule } from 'ng2-charts';
 
 const MaterialComponents = [
   MatDialogModule,
@@ -35,12 +36,14 @@ const MaterialComponents = [
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
+    ChartsModule,
     ...MaterialComponents
   ],
   exports: [
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    ChartsModule,
     ...MaterialComponents,
     HeaderComponent,
     SidebarComponent,

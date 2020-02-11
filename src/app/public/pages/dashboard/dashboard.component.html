@@ -1,7 +1,16 @@
-<!-- <div class="storage">
+<div class="storage">
     <div class="title">Estoque</div>
-    <canvas #estoque width="400" height="400"></canvas>
-</div> -->
+    <div class="chart-wrapper">
+        <canvas baseChart 
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+    </div>
+</div>
 <div class="production">
     <app-mini-production [production]="production" *ngFor="let production of productionList| slice:0:3" style="margin-bottom: 15px;"></app-mini-production>
 </div>

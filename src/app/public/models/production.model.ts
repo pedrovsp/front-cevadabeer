@@ -11,8 +11,8 @@ export class Production {
         if (obj) {
             this.cerveja = obj.cerveja ? obj.cerveja : null;
             this.quantidadeEmLitros = obj.quantidadeEmLitros ? obj.quantidadeEmLitros : null;
-            this.dtInicio = obj.dtInicio ? obj.dtInicio : null;
-            this.dtFim = obj.dtFim ? obj.dtFim : null;
+            this.dtInicio = obj.dtInicio ? new Date(obj.dtInicio) : null;
+            this.dtFim = obj.dtFim ? new Date(obj.dtFim) : null;
             this.id = obj.id ? obj.id : null;
         }
     }

@@ -5,6 +5,8 @@ import { BottleType } from '../../models/production.enum';
 import { RecipesService } from '../../services/recipes.service';
 import { tap } from 'rxjs/operators';
 import { Igredient } from '../../models/ingridient.model';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,27 +15,43 @@ import { Igredient } from '../../models/ingridient.model';
 })
 export class DashboardComponent implements OnInit {
 
-  productionList: Production[] = []
-  ingredientes: Igredient[] = []
+  productionList: Production[] = [];
+  ingredientes: Igredient[] = [];
 
+  barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  barChartLabels: Label[] = [];
+  barChartType: ChartType = 'bar';
+  barChartLegend = true;
+  barChartPlugins = [];
+  
+  barChartData: ChartDataSets[] = [
+    { data: [], label: 'Ingredientes' }
+  ];
+  
   constructor(private recipesSvc: RecipesService) { }
 
   ngOnInit() {
     this.recipesSvc.getIngredients().pipe(
       tap(ig => {
         this.ingredientes = ig;
+        this.renderChart();
       })
     ).subscribe()
 
     this.recipesSvc.getProductions().pipe(
-      tap(prd => {
-        this.productionList = prd;
+      tap((prd: Production[]) => {
+        prd.forEach(p => this.productionList.push(new Production(p)));
       })
     ).subscribe()
   }
 
   renderChart() {
-//    var ctx = document.getElementById('estoque').getContext('2d');
+    this.ingredientes.forEach(ig => {
+      this.barChartLabels.push(ig.nome);
+      this.barChartData[0].data.push(ig.quantidade);
+    })
   }
 
 }
