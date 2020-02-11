@@ -11,10 +11,14 @@ import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 const MaterialComponents = [
   MatDialogModule,
   MatInputModule,
+  MatProgressSpinnerModule,
+  MatSnackBarModule
 ];
 
 @NgModule({

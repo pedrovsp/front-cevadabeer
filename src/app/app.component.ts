@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoadingService } from './shared/services/loading.service';
+import { ObservableLike, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cevadabeer-front';
+  loading: Observable<boolean>;
+  constructor(private loadingService: LoadingService) {
+
+  }
+
 }

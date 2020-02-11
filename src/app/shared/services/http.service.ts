@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap, finalize } from 'rxjs/operators';
+import { tap, finalize, startWith, delay } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { LoadingService } from './loading.service';
 
 export const API_URL = 'https://glacial-cliffs-84306.herokuapp.com';
 
@@ -10,12 +11,12 @@ export const API_URL = 'https://glacial-cliffs-84306.herokuapp.com';
 })
 export class HttpService {
 
-  public loading = false;
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+      private httpClient: HttpClient,
+      private loadingService: LoadingService) { }
 
   public doPost<T>(url: string, body: T): Observable<T> {
-    this.loading = true;
+    this.loadingService.setLoading(true);
     return this.httpClient.post<T>(API_URL + url, body).pipe(
       tap(
         success => {
@@ -25,12 +26,12 @@ export class HttpService {
           console.log('Tratar erro', error);
         }
       ),
-      finalize(() => this.loading = false)
+      finalize(() => this.loadingService.setLoading(false))
     );
   }
 
   public doGet<T>(url: string, body?: T): Observable<T> {
-    this.loading = true;
+    this.loadingService.setLoading(true);
     return this.httpClient.get<T>(API_URL + url).pipe(
       tap(
         success => {
@@ -40,12 +41,12 @@ export class HttpService {
           console.log('Tratar erro', error);
         }
       ),
-      finalize(() => this.loading = false)
+      finalize(() => this.loadingService.setLoading(false))
     );
   }
 
   public doPut<T>(url: string, body: T): Observable<T> {
-    this.loading = true;
+    this.loadingService.setLoading(true);
     return this.httpClient.put<T>(API_URL + url, body).pipe(
       tap(
         success => {
@@ -55,12 +56,12 @@ export class HttpService {
           console.log('Tratar erro', error);
         }
       ),
-      finalize(() => this.loading = false)
+      finalize(() => this.loadingService.setLoading(false))
     );
   }
 
   public doDelete<T>(url: string, body?: T): Observable<T> {
-    this.loading = true;
+    this.loadingService.setLoading(true);
     return this.httpClient.delete<T>(API_URL + url, body).pipe(
       tap(
         success => {
@@ -70,7 +71,7 @@ export class HttpService {
           console.log('Tratar erro', error);
         }
       ),
-      finalize(() => this.loading = false)
+      finalize(() => this.loadingService.setLoading(false))
     );
   }
 

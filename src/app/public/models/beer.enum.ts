@@ -1,10 +1,10 @@
 export enum BeerType {
-    WEISS = 'WEISS',
-    LAGER = 'LAGER',
+    Saison = 'Saison',
+    Witbier = 'Witbier',
     IPA = 'IPA',
     RED_ALE = 'RED_ALE',
-    PILSEN = 'PILSEN',
-    STOUT = 'STOUT',
+    Lager = 'Lager',
+    Stout = 'Stout',
 }
 
 export enum BeerComplexity {
@@ -14,12 +14,12 @@ export enum BeerComplexity {
 }
 
 export enum BeerTypeText {
-    WEISS = 'Weiss',
-    LAGER = 'Lager',
+    Saison = 'Saison',
+    Witbier = 'Witbier',
     IPA = 'IPA',
-    RED_ALE = 'Red Ale',
-    PILSEN = 'Pilsen',
-    STOUT = 'Stout',
+    RED_ALE = 'RED_ALE',
+    Lager = 'Lager',
+    Stout = 'Stout',
 }
 
 export enum BeerComplexityText {

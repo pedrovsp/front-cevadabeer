@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Beer } from '../../models/beer.model';
 import { BeerComplexityText, BeerTypeText } from '../../models/beer.enum';
 import { environment } from 'src/environments/environment';
+import { MatDialog } from '@angular/material/dialog';
+import { BeerDialogComponent } from '../beer-dialog/beer-dialog.component';
 
 @Component({
   selector: 'app-recipe',
@@ -17,7 +19,7 @@ export class RecipeComponent implements OnInit {
   Complexity = BeerComplexityText;
   Style = BeerTypeText;
 
-  constructor() { }
+  constructor(private _dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -25,4 +27,14 @@ export class RecipeComponent implements OnInit {
   getImgUrl() {
     return this.imgUrl + this.beer.id + this.extension;
   }
+
+
+  openBeerDialog() {
+    this._dialog.open(BeerDialogComponent, {
+      data: {
+        beer: this.beer
+      }
+    });
+  }
+
 }

@@ -8,3 +8,15 @@
     height: calc(100vh - 115px);
     overflow: scroll;
 }
+
+.spinner {
+    position: absolute;
+    background: rgba(black, 0.2);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}

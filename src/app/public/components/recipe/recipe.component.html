@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box" (click)="openBeerDialog()">
     <img src="{{ getImgUrl() }}" alt="Foto do rotulo">
     <div class="content">
         <div class="title">
@@ -8,7 +8,7 @@
             Estilo: {{ Style[beer.estilo] }}
         </div>
         <div class="level">
-            Complexidade: {{ Complexity[beer.complexidade] }}
+            Complexidade: {{ Complexity[beer.conplexidade] }}
         </div>
     </div>
 </div>

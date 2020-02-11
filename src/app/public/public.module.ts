@@ -9,13 +9,17 @@ import { ProductionPageComponent } from './pages/production-page/production-page
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { ProductionComponent } from './components/production/production.component';
 import { MiniProductionComponent } from './components/mini-production/mini-production.component';
+import { BeerDialogComponent } from './components/beer-dialog/beer-dialog.component';
 
 @NgModule({
-  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent, RecipeComponent, ProductionComponent, MiniProductionComponent],
+  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent, RecipeComponent, ProductionComponent, MiniProductionComponent, BeerDialogComponent],
   imports: [
     CommonModule,
     SharedModule,
     PublicRoutingModule
+  ],
+  entryComponents: [
+    BeerDialogComponent
   ]
 })
 export class PublicModule { }

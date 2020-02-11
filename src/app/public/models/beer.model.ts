@@ -9,14 +9,14 @@ export class Beer {
     nome: string;
     ibu: number;
     diasMaturacao: number;
-    complexidade: BeerComplexity;
+    conplexidade: BeerComplexity;
 
     constructor(obj: Partial<Beer>) {
         if (obj) {
             this.id = obj.id ? obj.id : null;
             this.nome = obj.nome ? obj.nome : null;
             this.estilo = obj.estilo ? obj.estilo : null;
-            this.complexidade = obj.complexidade ? obj.complexidade : null;
+            this.conplexidade = obj.conplexidade ? obj.conplexidade : null;
             this.cor = obj.cor ? obj.cor : null;
             this.estilo = obj.estilo ? obj.estilo : null;
             this.teorAlcoolico = obj.teorAlcoolico ? obj.teorAlcoolico : null;
