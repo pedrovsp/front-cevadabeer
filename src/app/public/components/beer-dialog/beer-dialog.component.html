@@ -10,7 +10,7 @@
             </div>
             <div *ngFor="let ig of beer.receita">
                 <div class="item">
-                    {{ ig.ingrediente.nome }}: {{ ig.quantidade }}g
+                    {{ ig.ingrediente.nome }}: {{ ig.quantidade }}{{ getUnd(ig) }}
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Production } from '../../models/production.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-mini-production',
@@ -10,13 +11,20 @@ export class MiniProductionComponent implements OnInit {
 
   @Input('production') production: Production;
   
+  imgUrl = environment.S3_URL;
+  extension = environment.IMG_TYPE;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
   productionBarLength(): number {
-    return 100 - ((this.production.getRemainingDays() * 100)/this.production.duration);
+    return 100 - ((this.production.getRemainingDays() * 100)/this.production.getDuracao());
+  }
+
+  getImgUrl() {
+    return this.imgUrl + this.production.cerveja.id + this.extension;
   }
 
 }

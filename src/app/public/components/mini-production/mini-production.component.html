@@ -1,5 +1,5 @@
 <div class="box">
-    <!-- <img class="picture" src="{{ imgUrl }}" alt="Foto do rotulo"> -->
+    <img class="picture" src="{{ getImgUrl() }}" alt="Foto do rotulo">
     <div class="remaining-days-bar">
         <div class="filling-bar" [style.width.%]="productionBarLength()">
             {{ productionBarLength() }}%

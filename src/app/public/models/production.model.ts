@@ -1,28 +1,28 @@
 import { Beer } from './beer.model';
-import { BottleType } from './production.enum';
 
 export class Production {
-    beer: Beer;
-    quantity: number;
-    bottleType: BottleType;
-    startDate: Date;
-    duration: number;
+    cerveja: Beer;
+    quantidadeEmLitros: number;
+    dtInicio: Date;
+    dtFim: Date;
+    id: number;
 
     constructor(obj: Partial<Production>) {
         if (obj) {
-            this.beer = obj.beer ? obj.beer : null;
-            this.quantity = obj.quantity ? obj.quantity : null;
-            this.bottleType = obj.bottleType ? obj.bottleType : null;
-            this.startDate = obj.startDate ? obj.startDate : null;
-            this.duration = obj.duration ? obj.duration : null;
+            this.cerveja = obj.cerveja ? obj.cerveja : null;
+            this.quantidadeEmLitros = obj.quantidadeEmLitros ? obj.quantidadeEmLitros : null;
+            this.dtInicio = obj.dtInicio ? obj.dtInicio : null;
+            this.dtFim = obj.dtFim ? obj.dtFim : null;
+            this.id = obj.id ? obj.id : null;
         }
     }
 
     getRemainingDays(): number {
-        let endDate = new Date(this.startDate);
-        endDate.setDate(endDate.getDate() + this.duration);
+        return Math.round((this.dtFim.getTime() - new Date().getTime())/(1000*60*60*24));
+    }
     
-        return Math.round((endDate.getTime() - new Date().getTime())/(1000*60*60*24));
+    getDuracao(): number {
+        return Math.round((this.dtFim.getTime() - this.dtInicio.getTime())/(1000*60*60*24));
     }
     
 }
