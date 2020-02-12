@@ -10,7 +10,7 @@ import { ObservableLike, Observable } from 'rxjs';
 export class AppComponent {
   title = 'cevadabeer-front';
   loading: Observable<boolean>;
-  constructor(private loadingService: LoadingService) {
+  constructor(public loadingService: LoadingService) {
 
   }
 

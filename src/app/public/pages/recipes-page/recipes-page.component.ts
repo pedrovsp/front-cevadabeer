@@ -21,7 +21,7 @@ export class RecipesPageComponent implements OnInit {
     this.recipesSvc.getRecipes().pipe(
       tap(cervejas => {
         this.beerList = cervejas;
-        setTimeout(() => this.openSnackBar(), 2000);
+        setTimeout(() => this.openSnackBar(), 1000);
       })
     ).subscribe()
   }
@@ -29,7 +29,7 @@ export class RecipesPageComponent implements OnInit {
 
   openSnackBar() {
     this._snackBar.open('Seu estoque de Rota do Cerrado esta muito baixo!', 'Ok!', {
-      duration: 5000,
+      duration: 3000,
     });
   }
 
