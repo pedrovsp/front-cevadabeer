@@ -15,4 +15,8 @@
         margin-right: 10px;
         background-color: $colorLightGray;
     }
+
+    &.full-width {
+        width: calc(100% - 20px);
+    }
 }

@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PageHeaderComponent implements OnInit {
 
   @Input('title') pageTitle: string = 'Página';
+  @Input('full-width') fullWidth: boolean = false;
 
   constructor() { }
 

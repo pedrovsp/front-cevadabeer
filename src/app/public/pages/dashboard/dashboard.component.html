@@ -1,19 +1,22 @@
 <div class="content">
-    <div class="storage">
-        <app-page-header [title]="'Estoque'"></app-page-header>
-        <div class="chart-wrapper">
-            <canvas baseChart 
-            [datasets]="barChartData"
-            [labels]="barChartLabels"
-            [options]="barChartOptions"
-            [plugins]="barChartPlugins"
-            [legend]="barChartLegend"
-            [chartType]="barChartType">
-          </canvas>
-        </div>
+    <div class="left-side">
+        <!-- <app-insights></appnp-insights> -->
+        <div class="storage">
+            <app-page-header [title]="'Estoque'"></app-page-header>
+            <div class="chart-wrapper">
+                <canvas baseChart 
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+              </canvas>
+            </div>
+        </div>    
     </div>
     <div class="production">
-        <app-mini-production [production]="production" *ngFor="let production of productionList| slice:0:3" style="margin-bottom: 15px;"></app-mini-production>
+        <app-mini-production class="animated fadeIn" [production]="production" *ngFor="let production of productionList | slice:0:3" style="margin-bottom: 15px;"></app-mini-production>
     </div>
     
 </div>

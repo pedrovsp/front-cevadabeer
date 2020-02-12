@@ -10,9 +10,10 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { ProductionComponent } from './components/production/production.component';
 import { MiniProductionComponent } from './components/mini-production/mini-production.component';
 import { BeerDialogComponent } from './components/beer-dialog/beer-dialog.component';
+import { InsightsComponent } from './components/insights/insights.component';
 
 @NgModule({
-  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent, RecipeComponent, ProductionComponent, MiniProductionComponent, BeerDialogComponent],
+  declarations: [LoginComponent, DashboardComponent, RecipesPageComponent, ProductionPageComponent, RecipeComponent, ProductionComponent, MiniProductionComponent, BeerDialogComponent, InsightsComponent],
   imports: [
     CommonModule,
     SharedModule,
