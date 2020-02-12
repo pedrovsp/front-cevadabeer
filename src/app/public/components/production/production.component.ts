@@ -19,6 +19,6 @@ export class ProductionComponent implements OnInit {
   }
 
   productionBarLength(): number {
-    return 100 - ((this.production.getRemainingDays() * 100)/this.production.duration);
+    return 100 - ((this.production.getRemainingDays() * 100)/this.production.getDuracao());
   }
 }

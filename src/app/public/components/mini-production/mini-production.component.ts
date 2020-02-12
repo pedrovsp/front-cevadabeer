@@ -24,8 +24,7 @@ export class MiniProductionComponent implements OnInit {
   }
 
   getImgUrl() {
-    // todo this.production.cerveja.id
-    return this.imgUrl + `1` + this.extension;
+   // return this.imgUrl + this.production.cerveja.id + this.extension;
   }
 
 }

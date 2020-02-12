@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Production } from '../../models/production.model';
-import { BeerComplexity, BeerType, Cor } from '../../models/beer.enum';
-import { BottleType } from '../../models/production.enum';
 import { RecipesService } from '../../services/recipes.service';
 import { tap } from 'rxjs/operators';
 import { Igredient } from '../../models/ingridient.model';
@@ -35,7 +33,11 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.recipesSvc.getIngredients().pipe(
       tap(ig => {
-        this.ingredientes = ig;
+        ig.forEach(p => {
+          if (p.nome !== 'Agua')
+            this.ingredientes.push(new Igredient(p))
+        });
+
         this.renderChart();
       })
     ).subscribe()
