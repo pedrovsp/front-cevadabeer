@@ -19,7 +19,9 @@ export class ProductionComponent implements OnInit {
   }
 
   productionBarLength(): number {
-    return 100 - ((this.production.getRemainingDays() * 100)/this.production.getDuracao());
+    let barLength = 100 - ((this.production.getRemainingDays() * 100)/this.production.getDuracao());
+    if (barLength > 100) barLength = 100
+    return barLength;
   }
 
   getImgUrl() {}

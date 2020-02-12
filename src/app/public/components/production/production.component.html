@@ -5,13 +5,13 @@
             {{ production.cerveja.nome }}
         </div>
         <div class="type">
-            Quantidade: {{ production.quantidadeEmLitros }}
+            Quantidade: {{ production.quantidadeEmLitros }} litros
         </div>
         <!-- <div class="level">
             Envase: {{ BottleType[production.bottleType] }}
         </div> -->
         <div class="level">
-            Dias restantes: {{ production.getRemainingDays() }} dias
+            Dias restantes: {{ production.getRemainingDays() > 0 ? production.getRemainingDays() + ' dias' : 'Finalizada' }}
         </div>
     </div>
     <div class="remaining-days-bar">
