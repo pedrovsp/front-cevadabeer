@@ -1,15 +1,15 @@
 <div class="box">
-    <!-- <img src="{{ imgUrl }}" alt="Foto do rotulo"> -->
+    <img src="{{ getImgUrl() }}" alt="Foto do rotulo">
     <div class="content">
         <div class="title">
-            {{ production.beer.nome }}
+            {{ production.cerveja.nome }}
         </div>
         <div class="type">
-            Quantidade: {{ production.quantity }}
+            Quantidade: {{ production.quantidadeEmLitros }}
         </div>
-        <div class="level">
+        <!-- <div class="level">
             Envase: {{ BottleType[production.bottleType] }}
-        </div>
+        </div> -->
         <div class="level">
             Dias restantes: {{ production.getRemainingDays() }} dias
         </div>
