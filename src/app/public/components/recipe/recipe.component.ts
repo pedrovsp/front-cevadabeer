@@ -25,7 +25,7 @@ export class RecipeComponent implements OnInit {
   }
 
   getImgUrl() {
-  //  return this.imgUrl + this.beer.id + this.extension;
+    return this.imgUrl + this.beer.id + this.extension;
   }
 
 

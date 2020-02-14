@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Production } from '../../models/production.model';
 import { BottleTypeText } from '../../models/production.enum';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-production',
@@ -12,7 +13,8 @@ export class ProductionComponent implements OnInit {
   @Input('production') production: Production;
   
   BottleType = BottleTypeText;
-
+  imgUrl = environment.S3_URL;
+  extension = environment.IMG_TYPE;
   constructor() { }
 
   ngOnInit() {
@@ -24,5 +26,7 @@ export class ProductionComponent implements OnInit {
     return barLength;
   }
 
-  getImgUrl() {}
+  getImgUrl() {
+    return this.imgUrl + this.production.cerveja.id + this.extension;
+  }
 }
