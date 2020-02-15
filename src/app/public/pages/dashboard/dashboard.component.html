@@ -1,6 +1,6 @@
 <div class="content">
     <div class="left-side">
-        <app-insights></app-insights>
+        <app-insights [producoes]="productionList" [cervejas]="beerList" *ngIf="productionList.length > 0 && beerList.length > 0" class="animated fadeInDown"></app-insights>
         <div class="storage">
             <app-page-header [title]="'Estoque'"></app-page-header>
             <div class="chart-wrapper">

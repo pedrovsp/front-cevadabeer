@@ -1,12 +1,12 @@
 <div class="insights">
     <app-page-header [title]="'Insights'" [full-width]="true"></app-page-header>
     <div class="content">
-        <div class="text">
-            textteste
+        <div class="text" *ngIf="currentInsight">
+            {{ currentInsight.text }}
         </div>
         <div class="arrows">
-            <div class="arrow"></div>
-            <div class="arrow down"></div>                
+            <div class="arrow" (click)="previous()"></div>
+            <div class="arrow down" (click)=" next()"></div>                
         </div>
     </div>
 </div>

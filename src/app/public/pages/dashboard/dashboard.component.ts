@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 import { Igredient } from '../../models/ingridient.model';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { Beer } from '../../models/beer.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,6 +16,7 @@ export class DashboardComponent implements OnInit {
 
   productionList: Production[] = [];
   ingredientes: Igredient[] = [];
+  beerList: Beer[] = [];
 
   barChartOptions: ChartOptions = {
     responsive: true,
@@ -45,6 +47,12 @@ export class DashboardComponent implements OnInit {
     this.recipesSvc.getProductions().pipe(
       tap((prd: Production[]) => {
         prd.forEach(p => this.productionList.push(new Production(p)));
+      })
+    ).subscribe()
+
+    this.recipesSvc.getRecipes().pipe(
+      tap(cervejas => {
+        this.beerList = cervejas;
       })
     ).subscribe()
   }
